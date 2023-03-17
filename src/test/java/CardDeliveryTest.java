@@ -14,10 +14,10 @@ public class CardDeliveryTest {
 
         String date = LocalDate.now().plusDays(4).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
 
-        $("[data-test-id=\"city\"] input").setValue("Бубубубжжжжж");
+        $("[data-test-id=\"city\"] input").setValue("Самара");
         $("[data-test-id=\"date\"] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id=\"date\"] input").setValue(date);
-        $("[data-test-id=\"name\"] input").setValue("Christobaldo Potatochel");
+        $("[data-test-id=\"name\"] input").setValue("Кристобаль Картохель");
         $("[data-test-id=\"phone\"] input").setValue("+79085552266");
         $("[data-test-id=\"agreement\"]").click();
         $("span.button__text").click();
