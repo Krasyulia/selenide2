@@ -8,11 +8,15 @@ import java.time.Duration;
 
 public class CardDeliveryTest {
 
+    public String generateDate(long addDays, String pattern) {
+        return LocalDate.now().plusDays(addDays).format(DateTimeFormatter.ofPattern(pattern));
+    }
+
     @Test
     void cardOrderSuccessTest(){
         open("http://localhost:9999/");
 
-        String date = LocalDate.now().plusDays(4).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+        String date = generateDate(4, "dd.MM.yyyy");
 
         $("[data-test-id=\"city\"] input").setValue("Самара");
         $("[data-test-id=\"date\"] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
